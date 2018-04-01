@@ -8,7 +8,7 @@ node {
     }
 
     stage('deploy') {
-        sh 'docker cp target/jenkinsdemo-0.0.1-SNAPSHOT.war tomcat1:/usr/local/tomcat/webapps'
+        sh 'docker cp target/jenkinstest.war tomcat1:/usr/local/tomcat/webapps'
     }
 
     stage('results') {
