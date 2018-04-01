@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
     @EnableAutoConfiguration
     public class MainController {
 
-        @RequestMapping("/hello")
+        @RequestMapping("/")
         @ResponseBody
         String home() {
             return "Hello World!";
