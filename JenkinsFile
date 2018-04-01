@@ -1,14 +1,14 @@
 node {
     stage('SCM') {
-        git 'https://github.com/deeperxh/jenkinstest.git'
+        git 'https://github.com/padeoe/jenkinstest.git'
     }
 
     stage('build') {
-        mvn -B clean package
+        sh 'mvn -B clean package'
     }
-    
+
     stage('deploy') {
-        docker cp target/jenkinsdemo-0.0.1-SNAPSHOT.war tomcat1:/usr/local/tomcat/webapps
+        sh 'docker cp target/jenkinsdemo-0.0.1-SNAPSHOT.war tomcat1:/usr/local/tomcat/webapps'
     }
 
     stage('results') {
